@@ -140,7 +140,7 @@ format. Here is the model:
     {
       name: 'SALES',
       type: 'custom',
-      factory: 'net.hydromatic.optiq.impl.csv.CsvSchemaFactory',
+      factory: 'org.apache.optiq.impl.csv.CsvSchemaFactory',
       operand: {
         directory: 'target/test-classes/sales'
       }
@@ -151,7 +151,7 @@ format. Here is the model:
 
 The model defines a single schema called 'SALES'. The schema is
 powered by a plugin class,
-<a href="https://github.com/julianhyde/optiq-csv/blob/master/src/main/java/net/hydromatic/optiq/impl/csv/CsvSchemaFactory.java">net.hydromatic.optiq.impl.csv.CsvSchemaFactory</a>, which is part of the
+<a href="https://github.com/julianhyde/optiq-csv/blob/master/src/main/java/net/hydromatic/optiq/impl/csv/CsvSchemaFactory.java">org.apache.optiq.impl.csv.CsvSchemaFactory</a>, which is part of the
 optiq-csv project and implements the Optiq interface
 <a href="http://www.hydromatic.net/optiq/apidocs/net/hydromatic/optiq/SchemaFactory.html">SchemaFactory</a>. Its <code>create</code> method instantiates a
 schema, passing in the <code>directory</code> argument from the model file:
@@ -171,7 +171,7 @@ public Schema create(SchemaPlus parentSchema, String name,
 
 Driven by the model, the schema factory instantiates a single schema
 called 'SALES'.  The schema is an instance of
-<a href="https://github.com/julianhyde/optiq-csv/blob/master/src/main/java/net/hydromatic/optiq/impl/csv/CsvSchema.java">net.hydromatic.optiq.impl.csv.CsvSchema</a>
+<a href="https://github.com/julianhyde/optiq-csv/blob/master/src/main/java/net/hydromatic/optiq/impl/csv/CsvSchema.java">org.apache.optiq.impl.csv.CsvSchema</a>
 and implements the Optiq interface <a
 href="http://www.hydromatic.net/optiq/apidocs/net/hydromatic/optiq/Schema.html">Schema</a>.
 
@@ -250,7 +250,7 @@ Here is a schema that defines a view:
     {
       name: 'SALES',
       type: 'custom',
-      factory: 'net.hydromatic.optiq.impl.csv.CsvSchemaFactory',
+      factory: 'org.apache.optiq.impl.csv.CsvSchemaFactory',
       operand: {
         directory: 'target/test-classes/sales'
       },
@@ -299,7 +299,7 @@ There is an example in <code>model-with-custom-table.json</code>:
         {
           name: 'EMPS',
           type: 'custom',
-          factory: 'net.hydromatic.optiq.impl.csv.CsvTableFactory',
+          factory: 'org.apache.optiq.impl.csv.CsvTableFactory',
           operand: {
             file: 'target/test-classes/sales/EMPS.csv',
             smart: false
@@ -328,7 +328,7 @@ sqlline> SELECT empno, name FROM custom_table.emps;
 ```
 
 The schema is a regular one, and contains a custom table powered by
-<a href="https://github.com/julianhyde/optiq-csv/blob/master/src/main/java/net/hydromatic/optiq/impl/csv/CsvTableFactory.java">net.hydromatic.optiq.impl.csv.CsvTableFactory</a>,
+<a href="https://github.com/julianhyde/optiq-csv/blob/master/src/main/java/net/hydromatic/optiq/impl/csv/CsvTableFactory.java">org.apache.optiq.impl.csv.CsvTableFactory</a>,
 which implements the Optiq interface
 <a href="http://www.hydromatic.net/optiq/apidocs/net/hydromatic/optiq/TableFactory.html">TableFactory</a>.
 Its <code>create</code> method instantiates a
@@ -438,7 +438,7 @@ method to create
 <a href="https://github.com/julianhyde/optiq-csv/blob/master/src/main/java/net/hydromatic/optiq/impl/csv/CsvTableScan.java">CsvTableScan</a>.
 Table scans are the leaves of a query operator tree.
 The usual implementation is
-<code><a href="http://www.hydromatic.net/optiq/apidocs/net/hydromatic/optiq/impl/java/JavaRules.EnumerableTableAccessRel.html">EnumerableTableAccessRel</a></code>,
+<code><a href="http://www.hydromatic.net/optiq/apidocs/net/hydromatic/optiq/impl/enumerable/JavaRules.EnumerableTableAccessRel.html">EnumerableTableAccessRel</a></code>,
 but we have created a distinctive sub-type that will cause rules to fire.
 
 Here is the rule in its entirety:
@@ -543,7 +543,7 @@ For example, this schema reads from a MySQL "foodmart" database:
     {
       name: 'FOODMART',
       type: 'custom',
-      factory: 'net.hydromatic.optiq.impl.jdbc.JdbcSchema$Factory',
+      factory: 'org.apache.optiq.impl.jdbc.JdbcSchema$Factory',
       operand: {
         jdbcDriver: 'com.mysql.jdbc.Driver',
         jdbcUrl: 'jdbc:mysql://localhost/foodmart',
@@ -589,7 +589,7 @@ For example, the following model reads tables from a MySQL
     {
       name: 'FOODMART_CLONE',
       type: 'custom',
-      factory: 'net.hydromatic.optiq.impl.clone.CloneSchema$Factory',
+      factory: 'org.apache.optiq.impl.clone.CloneSchema$Factory',
       operand: {
         jdbcDriver: 'com.mysql.jdbc.Driver',
         jdbcUrl: 'jdbc:mysql://localhost/foodmart',
@@ -613,7 +613,7 @@ defined earlier in the model, like this:
     {
       name: 'FOODMART',
       type: 'custom',
-      factory: 'net.hydromatic.optiq.impl.jdbc.JdbcSchema$Factory',
+      factory: 'org.apache.optiq.impl.jdbc.JdbcSchema$Factory',
       operand: {
         jdbcDriver: 'com.mysql.jdbc.Driver',
         jdbcUrl: 'jdbc:mysql://localhost/foodmart',
@@ -624,7 +624,7 @@ defined earlier in the model, like this:
     {
       name: 'FOODMART_CLONE',
       type: 'custom',
-      factory: 'net.hydromatic.optiq.impl.clone.CloneSchema$Factory',
+      factory: 'org.apache.optiq.impl.clone.CloneSchema$Factory',
       operand: {
         source: 'FOODMART'
       }

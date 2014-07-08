@@ -15,9 +15,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 */
-package net.hydromatic.optiq.impl.csv;
+package org.apache.optiq.impl.csv;
 
-import net.hydromatic.linq4j.Enumerator;
+import org.apache.linq4j.Enumerator;
 
 import au.com.bytecode.opencsv.CSVReader;
 

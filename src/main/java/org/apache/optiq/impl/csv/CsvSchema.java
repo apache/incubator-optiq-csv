@@ -15,10 +15,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 */
-package net.hydromatic.optiq.impl.csv;
+package org.apache.optiq.impl.csv;
 
-import net.hydromatic.optiq.*;
-import net.hydromatic.optiq.impl.AbstractSchema;
+import org.apache.optiq.*;
+import org.apache.optiq.impl.AbstractSchema;
 
 import com.google.common.collect.ImmutableMap;
 

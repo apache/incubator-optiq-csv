@@ -15,15 +15,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 */
-package net.hydromatic.optiq.impl.csv;
+package org.apache.optiq.impl.csv;
 
-import net.hydromatic.optiq.rules.java.*;
+import org.apache.optiq.impl.enumerable.*;
+import org.apache.optiq.rel.*;
+import org.apache.optiq.relopt.*;
+import org.apache.optiq.reltype.*;
 
-import net.hydromatic.linq4j.expressions.*;
-
-import org.eigenbase.rel.*;
-import org.eigenbase.relopt.*;
-import org.eigenbase.reltype.*;
+import org.apache.linq4j.expressions.*;
 
 import java.util.*;
 

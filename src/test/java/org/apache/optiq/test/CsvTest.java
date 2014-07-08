@@ -15,9 +15,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 */
-package net.hydromatic.optiq.test;
+package org.apache.optiq.test;
 
-import net.hydromatic.linq4j.function.Function1;
+import org.apache.linq4j.function.Function1;
 
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -89,7 +89,7 @@ public class CsvTest {
         + "     {\n"
         + "       type: 'custom',\n"
         + "       name: 'bad',\n"
-        + "       factory: 'net.hydromatic.optiq.impl.csv.CsvSchemaFactory',\n"
+        + "       factory: 'org.apache.optiq.impl.csv.CsvSchemaFactory',\n"
         + "       operand: {\n"
         + "         directory: '/does/not/exist'\n"
         + "       }\n"
