@@ -15,31 +15,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 */
-package net.hydromatic.optiq.impl.csv;
-
-import org.eigenbase.rel.RelNode;
-import org.eigenbase.relopt.RelOptTable;
-import org.eigenbase.reltype.RelProtoDataType;
-
-import java.io.File;
 
 /**
- * Refinement of {@link CsvTable} that plans itself.
+ * Unit tests.
  */
-class CsvSmartTable extends CsvTable {
-  /** Creates a CsvSmartTable. */
-  CsvSmartTable(File file, RelProtoDataType protoRowType) {
-    super(file, protoRowType);
-  }
+package org.apache.optiq.test;
 
-  public RelNode toRel(
-      RelOptTable.ToRelContext context,
-      RelOptTable relOptTable) {
-    // Request all fields.
-    final int fieldCount = relOptTable.getRowType().getFieldCount();
-    final int[] fields = CsvEnumerator.identityList(fieldCount);
-    return new CsvTableScan(context.getCluster(), relOptTable, this, fields);
-  }
-}
-
-// End CsvSmartTable.java
+// End CsvTest.java

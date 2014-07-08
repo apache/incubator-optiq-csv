@@ -15,20 +15,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 */
-package net.hydromatic.optiq.impl.csv;
+package org.apache.optiq.impl.csv;
 
-import net.hydromatic.optiq.*;
-import net.hydromatic.optiq.impl.AbstractTableQueryable;
-import net.hydromatic.optiq.impl.java.AbstractQueryableTable;
-import net.hydromatic.optiq.rules.java.EnumerableConvention;
-import net.hydromatic.optiq.rules.java.JavaRules;
+import org.apache.optiq.*;
+import org.apache.optiq.impl.AbstractTableQueryable;
+import org.apache.optiq.impl.enumerable.AbstractQueryableTable;
+import org.apache.optiq.impl.enumerable.EnumerableConvention;
+import org.apache.optiq.impl.enumerable.JavaRules;
+import org.apache.optiq.rel.RelNode;
+import org.apache.optiq.relopt.RelOptTable;
+import org.apache.optiq.reltype.*;
+import org.apache.optiq.sql.type.SqlTypeName;
 
-import net.hydromatic.linq4j.*;
-
-import org.eigenbase.rel.RelNode;
-import org.eigenbase.relopt.RelOptTable;
-import org.eigenbase.reltype.*;
-import org.eigenbase.sql.type.SqlTypeName;
+import org.apache.linq4j.*;
 
 import java.io.*;
 

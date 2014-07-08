@@ -15,13 +15,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 */
-package net.hydromatic.optiq.impl.csv;
+package org.apache.optiq.impl.csv;
 
-import org.eigenbase.rel.ProjectRel;
-import org.eigenbase.relopt.RelOptRule;
-import org.eigenbase.relopt.RelOptRuleCall;
-import org.eigenbase.rex.RexInputRef;
-import org.eigenbase.rex.RexNode;
+import org.apache.optiq.rel.ProjectRel;
+import org.apache.optiq.relopt.RelOptRule;
+import org.apache.optiq.relopt.RelOptRuleCall;
+import org.apache.optiq.rex.RexInputRef;
+import org.apache.optiq.rex.RexNode;
 
 import java.util.List;
 

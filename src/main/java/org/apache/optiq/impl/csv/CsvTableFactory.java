@@ -15,33 +15,40 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 */
-package net.hydromatic.optiq.impl.csv;
+package org.apache.optiq.impl.csv;
 
-import net.hydromatic.optiq.*;
+import org.apache.optiq.*;
+
+import org.apache.optiq.reltype.*;
 
 import java.io.File;
 import java.util.Map;
 
 /**
- * Factory that creates a {@link CsvSchema}.
+ * Factory that creates a {@link CsvTable}.
  *
- * <p>Allows a custom schema to be included in a <code><i>model</i>.json</code>
- * file.</p>
+ * <p>Allows a CSV table to be included in a model.json file, even in a
+ * schema that is not based upon {@link CsvSchema}.</p>
  */
 @SuppressWarnings("UnusedDeclaration")
-public class CsvSchemaFactory implements SchemaFactory {
+public class CsvTableFactory implements TableFactory<CsvTable> {
   // public constructor, per factory contract
-  public CsvSchemaFactory() {
+  public CsvTableFactory() {
   }
 
-  public Schema create(SchemaPlus parentSchema, String name,
-      Map<String, Object> operand) {
-    String directory = (String) operand.get("directory");
-    Boolean smart = (Boolean) operand.get("smart");
-    return new CsvSchema(
-        new File(directory),
-        smart != null && smart);
+  public CsvTable create(SchemaPlus schema, String name,
+      Map<String, Object> map, RelDataType rowType) {
+    String fileName = (String) map.get("file");
+    Boolean smart = (Boolean) map.get("smart");
+    final File file = new File(fileName);
+    final RelProtoDataType protoRowType =
+        rowType != null ? RelDataTypeImpl.proto(rowType) : null;
+    if (smart != null && smart) {
+      return new CsvSmartTable(file, protoRowType);
+    } else {
+      return new CsvTable(file, protoRowType);
+    }
   }
 }
 
-// End CsvSchemaFactory.java
+// End CsvTableFactory.java

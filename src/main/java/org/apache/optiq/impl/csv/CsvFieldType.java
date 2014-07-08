@@ -15,13 +15,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 */
-package net.hydromatic.optiq.impl.csv;
+package org.apache.optiq.impl.csv;
 
-import net.hydromatic.optiq.impl.java.JavaTypeFactory;
+import org.apache.optiq.impl.enumerable.JavaTypeFactory;
 
-import net.hydromatic.linq4j.expressions.Primitive;
+import org.apache.optiq.reltype.RelDataType;
 
-import org.eigenbase.reltype.RelDataType;
+import org.apache.linq4j.expressions.Primitive;
 
 import java.util.HashMap;
 import java.util.Map;

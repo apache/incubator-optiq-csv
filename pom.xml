@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <!-- The basics. -->
-  <groupId>net.hydromatic</groupId>
+  <groupId>org.apache</groupId>
   <artifactId>optiq-csv</artifactId>
   <version>0.4-SNAPSHOT</version>
   <packaging>jar</packaging>
@@ -81,19 +81,19 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>net.hydromatic</groupId>
+      <groupId>org.apache</groupId>
       <artifactId>optiq-core</artifactId>
-      <version>0.8</version>
+      <version>0.9-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>net.hydromatic</groupId>
+      <groupId>org.apache</groupId>
       <artifactId>optiq-avatica</artifactId>
-      <version>0.8</version>
+      <version>0.9-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>net.hydromatic</groupId>
+      <groupId>org.apache</groupId>
       <artifactId>linq4j</artifactId>
-      <version>0.4</version>
+      <version>0.5-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>net.sf.opencsv</groupId>
