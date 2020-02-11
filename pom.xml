@@ -58,7 +58,7 @@
     <repository>
       <id>conjars</id>
       <name>Concurrent Conjars repository</name>
-      <url>http://conjars.org/repo</url>
+      <url>https://conjars.org/repo</url>
       <layout>default</layout>
     </repository>
   </distributionManagement>
@@ -142,7 +142,7 @@
       </releases>
       <id>pentaho</id>
       <name>Pentaho</name>
-      <url>http://repo.pentaho.org/artifactory/repo</url>
+      <url>https://repo.pentaho.org/artifactory/repo</url>
       <layout>default</layout>
     </repository>
     <repository>
@@ -153,7 +153,7 @@
       </releases>
       <id>conjars</id>
       <name>Conjars</name>
-      <url>http://conjars.org/repo</url>
+      <url>https://conjars.org/repo</url>
       <layout>default</layout>
     </repository>
   </repositories>
